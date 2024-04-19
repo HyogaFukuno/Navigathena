@@ -57,7 +57,7 @@ Releases: https://github.com/mackysoft/Navigathena/releases
 Or, you can add this package by opening PackageManager and entering
 
 ```
-https://github.com/mackysoft/Navigathena.git?path=Assets/MackySoft/MackySoft.Navigathena
+https://github.com/HyogaFukuno/Navigathena.git?path=Assets/MackySoft/MackySoft.Navigathena
 ```
 
 from the `Add package from git URL` option.
