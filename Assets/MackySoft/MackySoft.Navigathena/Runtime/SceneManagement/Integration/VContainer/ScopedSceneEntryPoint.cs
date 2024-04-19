@@ -2,6 +2,7 @@
 using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
@@ -21,6 +22,8 @@ namespace MackySoft.Navigathena.SceneManagement.VContainer
 
 		async UniTask EnsureBuildAndInject (CancellationToken cancellationToken)
 		{
+			Debug.Log("[Navigathena] Called EnsureBuildAndInject");
+			
 			if (m_Lifecycle != null)
 			{
 				return;
@@ -60,7 +63,7 @@ namespace MackySoft.Navigathena.SceneManagement.VContainer
 
 		protected virtual UniTask<LifetimeScope> EnsureParentScope (CancellationToken cancellationToken)
 		{
-			return UniTask.FromResult<LifetimeScope>(null);
+			return UniTask.FromResult<LifetimeScope>(VContainerSettings.Instance.RootLifetimeScope ?? null);
 		}
 
 		protected sealed override async UniTask OnInitialize (ISceneDataReader reader, IProgress<IProgressDataStore> progress, CancellationToken cancellationToken)
